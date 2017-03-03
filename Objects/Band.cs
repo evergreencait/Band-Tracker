@@ -25,6 +25,11 @@ namespace BandTracker
             return _name;
         }
 
+        public void SetName(string newName)
+        {
+            _name = newName;
+        }
+
         public override bool Equals(System.Object otherBand)
         {
             if(!(otherBand is Band))
