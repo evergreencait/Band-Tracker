@@ -12,7 +12,7 @@ body {
 #header {
     font-family: 'Rock Salt', cursive;
     color: white;
-    font-size: 85px;
+    font-size: 100px;
     padding-top: 30%;
 }
 
@@ -31,4 +31,38 @@ h4 {
     color: white;
     text-align-last: right;
 
+}
+
+a {
+    color: teal;
+    font-family: 'Ranga', cursive;
+    font-size: 30px;
+}
+h1 {
+    color: white;
+}
+
+.btn {
+    margin-bottom: 80px;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+li {
+    color: white;
+}
+
+h2{
+    color: white;
+    margin-top: 180px;
+}
+
+label {
+    color: white;
 }
