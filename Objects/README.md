@@ -6,7 +6,7 @@
 
 ## Description
 
-_This application will allow users to # _Hair Salon_
+This application will allow users to # _Hair Salon_
 
 #### _Hair Salon Website, Epicodus C# Week 3 Code Review, 2.24.17_
 
