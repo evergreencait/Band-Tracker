@@ -67,7 +67,7 @@ namespace BandTracker
         }
 
         [Fact]
-        public void Test_AddRecipe_AddsBandToVenue()
+        public void Test_AddBand_AddsBandToVenue()
         {
             //Arrange
             Band testBand = new Band("Radiohead");
