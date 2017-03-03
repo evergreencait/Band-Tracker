@@ -40,6 +40,18 @@ namespace BandTracker
                 newBand.Save();
                 return View["bands.cshtml", Band.GetAll()];
             };
+
+            Post["/venues/delete"] = _ => {
+                Venue.DeleteAll();
+                return View["index.cshtml"];
+            };
+
+            Post["/bands/delete"] = _ => {
+                Band.DeleteAll();
+                return View["index.cshtml"];
+            };
+
+
         }
     }
 }

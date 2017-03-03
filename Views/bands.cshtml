@@ -11,10 +11,6 @@ else
     @foreach (var band in Model)
     {
         <li><a href="/bands/detail/@band.GetId()">@band.GetName()</a></li>
-        <form action="/bands/@band.GetId()" method="post">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit" class="btn">Delete</button>
-        </form>
     }
   </ul>
 }
