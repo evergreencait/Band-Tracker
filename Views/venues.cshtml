@@ -1,0 +1,25 @@
+@if (@Model.Count == 0)
+{
+  <p>No venues have been added yet.</p>
+}
+else
+{
+  <h1>Venues</h1>
+  <hr>
+  <ul>
+    @foreach (var venue in Model)
+    {
+        <li><a href="/venues/detail/@venue.GetId()">@venue.GetName()</a></li>
+        <form action="/venues/@venue.GetId()" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn">Delete</button>
+        </form>
+    }
+  </ul>
+}
+<form action="/venues/delete" method="post">
+  <h4><a href="/venues/new">Add New Band</a> |
+  <button class="btn" type="submit">Clear All</button></h4>
+</form>
+<hr>
+<h4><a href="/">Return Home</a></h4>
