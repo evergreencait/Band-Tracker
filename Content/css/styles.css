@@ -13,7 +13,10 @@ body {
     font-family: 'Rock Salt', cursive;
     color: white;
     font-size: 100px;
-    padding-top: 30%;
+    /*border:3px solid white;*/
+    margin-top: 30%;
+
+    /*border-radius: 70%;*/
 }
 
 img {
@@ -29,7 +32,7 @@ img {
 h4 {
     font-size: 30px;
     color: white;
-    text-align-last: right;
+    text-align: center;
 
 }
 
