@@ -24,35 +24,52 @@ namespace BandTracker
         }
 
         [Fact]
-       public void Test_Equal_ReturnsTrueForSameName()
-       {
-           //Arrange, Act
-           Venue firstVenue = new Venue("Gorge");
-           Venue secondVenue = new Venue("Gorge");
+        public void Test_Equal_ReturnsTrueForSameName()
+        {
+            //Arrange, Act
+            Venue firstVenue = new Venue("Gorge");
+            Venue secondVenue = new Venue("Gorge");
 
-           //Assert
-           Assert.Equal(firstVenue, secondVenue);
-       }
+            //Assert
+            Assert.Equal(firstVenue, secondVenue);
+        }
 
-       [Fact]
-       public void Test_Save_SavesVenueToDatabase()
-       {
-           //Arrange
-           Venue testVenue = new Venue("Gorge");
-           testVenue.Save();
+        [Fact]
+        public void Test_Save_SavesVenueToDatabase()
+        {
+            //Arrange
+            Venue testVenue = new Venue("Gorge");
+            testVenue.Save();
 
-           //Act
-           List<Venue> result = Venue.GetAll();
-           List<Venue> testList = new List<Venue>{testVenue};
+            //Act
+            List<Venue> result = Venue.GetAll();
+            List<Venue> testList = new List<Venue>{testVenue};
 
-           //Assert
-           Assert.Equal(testList, result);
-       }
+            //Assert
+            Assert.Equal(testList, result);
+        }
 
-       public void Dispose()
-       {
-           // Band.DeleteAll();
-           // Venue.DeleteAll();
-       }
-   }
+        [Fact]
+        public void Test_Save_AssignsIdToVenueObject()
+        {
+            //Arrange
+            Venue testVenue = new Venue("Gorge");
+            testVenue.Save();
+
+            //Act
+            Venue savedVenue = Venue.GetAll()[0];
+
+            int result = savedVenue.GetId();
+            int testId = testVenue.GetId();
+
+            //Assert
+            Assert.Equal(testId, result);
+        }
+
+        public void Dispose()
+        {
+            Band.DeleteAll();
+            Venue.DeleteAll();
+        }
+    }
 }
