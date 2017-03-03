@@ -7,8 +7,14 @@
     <input type="hidden" name="_method" value="DELETE">
     <button type="submit" class="btn">Delete this venue</button>
   </form>
-
-  <p><a href="/venue/edit/@Model.GetId()" class="links">Update this venue's information</a></p>
+</form>
+  <form class="appears" action="/venues/edit/@venue.GetId()" method="post">
+        <input type="hidden" name="_method" value="PATCH">
+        <label for="new-venue-name">New Name: </label>
+        <input type="text" name="new-venue-name" value="@venue.GetName()">
+        <button type="submit" class="btn">Update</button>
+  </form>
+  
   <p><a href="/venues/new" class="links">Add another venue</a></p>
   <p><a href="/" class="links">Go back home</a></p>
 </div>
