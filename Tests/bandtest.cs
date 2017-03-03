@@ -41,6 +41,17 @@ namespace BandTracker
             Assert.Equal(expected, result);
         }
 
+        [Fact]
+        public void Find_ReturnsFoundBand_name()
+        {
+            Band newBand = new Band("Radiohead");
+            newBand.Save();
+
+            Band foundBand = Band.Find(newBand.GetId());
+
+            Assert.Equal(newBand, foundBand);
+        }
+
 
         public void Dispose()
         {
