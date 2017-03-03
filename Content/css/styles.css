@@ -14,7 +14,7 @@ body {
     color: white;
     font-size: 100px;
     /*border:3px solid white;*/
-    margin-top: 30%;
+    margin-top: 10%;
 
     /*border-radius: 70%;*/
 }
@@ -68,4 +68,12 @@ h2{
 
 label {
     color: white;
+}
+
+.jumbotron {
+    background-position: top;
+    background-attachment: fixed;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/db/ef/1c/dbef1c26491313a76bd031738d842860.jpg");
+    border-bottom: 40px solid #006767;
+    height: 400px;
 }
