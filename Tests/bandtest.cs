@@ -52,10 +52,31 @@ namespace BandTracker
             Assert.Equal(newBand, foundBand);
         }
 
+        [Fact]
+        public void Test_AddVenue_AddsVenueToBand()
+        {
+            //Arrange
+            Venue testVenue = new Venue("Gorge");
+            testVenue.Save();
+
+            Band testBand = new Band("Radiohead");
+            testBand.Save();
+
+            //Act
+            testVenue.AddBand(testBand);
+
+            List<Venue> result = testBand.GetVenues();
+            List<Venue> testList = new List<Venue>{testVenue};
+
+            //Assert
+            Assert.Equal(testList, result);
+        }
+
 
         public void Dispose()
         {
             Band.DeleteAll();
+            Venue.DeleteAll();
         }
     }
 }

@@ -170,6 +170,24 @@ namespace BandTracker
             return venues;
         }
 
+        public void AddVenue(Venue newVenue)
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (venue_id, band_id) VALUES (@VenueId, @BandId);", conn);
+
+            cmd.Parameters.Add(new SqlParameter("@BandId", this.GetId()));
+            cmd.Parameters.Add(new SqlParameter("@VenueId", newVenue.GetId()));
+
+            cmd.ExecuteNonQuery();
+
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
+
 
         public static void DeleteAll()
         {
