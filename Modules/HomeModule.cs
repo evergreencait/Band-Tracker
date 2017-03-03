@@ -73,11 +73,6 @@ namespace BandTracker
                 return View["venue.cshtml", model];
             };
 
-        //     Get["/venue/{id}"] = parameters => {
-        //        Venue SelectedVenue = Venue.Find(parameters.id);
-        //        return View["venue.cshtml", SelectedVenue];
-        //    };
-
             Post["/band/add_venue"] = _ => {
                 Venue venue = Venue.Find(Request.Form["venue-id"]);
                 Band band = Band.Find(Request.Form["band-id"]);
@@ -91,10 +86,20 @@ namespace BandTracker
                 return View["success.cshtml"];
             };
 
+            Get["venue/edit/{id}"] = parameters => {
+                Venue SelectedVenue = Venue.Find(parameters.id);
+                return View["update_venue.cshtml", SelectedVenue];
+            };
+
             Patch["/venue/edit/{id}"] = parameters => {
                 Venue SelectedVenue = Venue.Find(parameters.id);
                 SelectedVenue.UpdateVenue(Request.Form["new-venue-name"]);
-                return View["venues.cshtml", Venue.GetAll()];
+                return View["success.cshtml", Venue.GetAll()];
+            };
+
+            Get["/venues/list"] = _ => {
+                List<Venue> AllVenues = Venue.GetAll();
+                return View["venues_list.cshtml", AllVenues];
             };
 
 
