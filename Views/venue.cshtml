@@ -1,0 +1,14 @@
+
+<h1 class="venue-name">@Model.GetName()</h1>
+
+
+
+  <form action="/venue/delete/@Model.GetId()" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" class="btn">Delete this venue</button>
+  </form>
+
+  <p><a href="/venue/edit/@Model.GetId()" class="links">Update this venue's information</a></p>
+  <p><a href="/venues/new" class="links">Add another venue</a></p>
+  <p><a href="/" class="links">Go back home</a></p>
+</div>
