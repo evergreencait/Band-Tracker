@@ -29,6 +29,19 @@ namespace BandTracker
             Assert.Equal(firstBand, secondBand);
         }
 
+        [Fact]
+        public void Save_ReturnsBandName_name()
+        {
+            Band newBand = new Band("Radiohead");
+            newBand.Save();
+
+            List<Band> expected = new List<Band>{newBand};
+            List<Band> result = Band.GetAll();
+
+            Assert.Equal(expected, result);
+        }
+
+
         public void Dispose()
         {
             // Band.DeleteAll();
